@@ -1,17 +1,18 @@
 /**
- * @brief Internal definitions used by the Yutani compositor.
+ * @brief Internal definitions used by the Yutani (NG) compositor.
  *
  * @copyright
- * This file is part of ToaruOS and is released under the terms
+ * This file is part of SiriusOS and is released under the terms
  * of the NCSA / University of Illinois License - see LICENSE.md
  * Copyright (C) 2013-2021 K. Lange
+ * Copyright (C) 2024 Gamma Microsystems
  */
 #pragma once
 
 #include <_cheader.h>
 #include <stdint.h>
 #include <sys/time.h>
-#include <toaru/yutani.h>
+#include <sirius/yutani.h>
 
 _Begin_C_Header
 

@@ -10,20 +10,19 @@
 #include <_cheader.h>
 
 /* Privileged */
-#define TOARU_SYS_FUNC_SYNC          3
-#define TOARU_SYS_FUNC_LOGHERE       4
-#define TOARU_SYS_FUNC_KDEBUG        7
-#define TOARU_SYS_FUNC_INSMOD        8
+#define SIRIUS_SYS_FUNC_SYNC          3
+#define SIRIUS_SYS_FUNC_LOGHERE       4
+#define SIRIUS_SYS_FUNC_KDEBUG        7
+#define SIRIUS_SYS_FUNC_INSMOD        8
 
 /* Unpriviliged */
-#define TOARU_SYS_FUNC_SETHEAP       9
-#define TOARU_SYS_FUNC_MMAP         10
-#define TOARU_SYS_FUNC_THREADNAME   11
-#define TOARU_SYS_FUNC_SETVGACURSOR 13
-#define TOARU_SYS_FUNC_SETGSBASE    14
-#define TOARU_SYS_FUNC_NPROC        15
+#define SIRIUS_SYS_FUNC_SETHEAP       9
+#define SIRIUS_SYS_FUNC_MMAP         10
+#define SIRIUS_SYS_FUNC_THREADNAME   11
+#define SIRIUS_SYS_FUNC_SETVGACURSOR 13
+#define SIRIUS_SYS_FUNC_SETGSBASE    14
+#define SIRIUS_SYS_FUNC_NPROC        15
 
 _Begin_C_Header
 extern int sysfunc(int command, char ** args);
 _End_C_Header
-

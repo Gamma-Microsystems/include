@@ -1,7 +1,7 @@
 /**
  * @brief Kernel gzip decompressor
  *
- * This is a slimmed down version of libtoaru_inflate; it's an implementation
+ * This is a slimmed down version of libsirius_inflate; it's an implementation
  * of the tinf algorithm for decompressing gzip/DEFLATE payloads, with a
  * very straightforward API: Point @c gzip_inputPtr at your gzip data,
  * point @c gzip_outputPtr where you want the output to go, and then

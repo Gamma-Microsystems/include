@@ -2,15 +2,16 @@
  * @brief Client-side Window Decoration library
  *
  * @copyright
- * This file is part of ToaruOS and is released under the terms
+ * This file is part of SiriusOS and is released under the terms
  * of the NCSA / University of Illinois License - see LICENSE.md
  * Copyright (C) 2012-2018 K. Lange
+ * Copyright (C) 2024 Gamma Microsystems
  */
 #pragma once
 
 #include <_cheader.h>
-#include <toaru/graphics.h>
-#include <toaru/yutani.h>
+#include <sirius/graphics.h>
+#include <sirius/yutani.h>
 
 _Begin_C_Header
 

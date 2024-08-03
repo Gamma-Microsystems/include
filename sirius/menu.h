@@ -1,10 +1,10 @@
 #pragma once
 
 #include <_cheader.h>
-#include <toaru/graphics.h>
-#include <toaru/hashmap.h>
-#include <toaru/list.h>
-#include <toaru/yutani.h>
+#include <sirius/graphics.h>
+#include <sirius/hashmap.h>
+#include <sirius/list.h>
+#include <sirius/yutani-ng.h>
 
 _Begin_C_Header
 

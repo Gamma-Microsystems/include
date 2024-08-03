@@ -6,9 +6,10 @@
  * passwords against /etc/master.passwd and to set typical login vars.
  *
  * @copyright
- * This file is part of ToaruOS and is released under the terms
+ * This file is part of SiriusOS and is released under the terms
  * of the NCSA / University of Illinois License - see LICENSE.md
  * Copyright (C) 2013-2018 K. Lange
+ * Copyright (C) 2024 Gamma Microsystems
  */
 
 #pragma once
@@ -19,28 +20,28 @@
 _Begin_C_Header
 
 /**
- * toaru_auth_check_pass
+ * sirius_auth_check_pass
  *
  * Returns the uid for the request user on success, -1 on failure.
  */
-extern int toaru_auth_check_pass(char * user, char * pass);
+extern int sirius_auth_check_pass(char * user, char * pass);
 
 /**
- * toaru_auth_set_vars
+ * sirius_auth_set_vars
  *
  * Sets various environment variables (HOME, USER, SHELL, etc.)
  * for the current user.
  */
-extern void toaru_auth_set_vars(void);
+extern void sirius_auth_set_vars(void);
 
 /**
  * Set supplementary groups from /etc/groups
  */
-extern void toaru_auth_set_groups(uid_t uid);
+extern void sirius_auth_set_groups(uid_t uid);
 
 /**
  * Do the above two steps, and setuid, and setgid...
  */
-extern void toaru_set_credentials(uid_t uid);
+extern void sirius_set_credentials(uid_t uid);
 
 _End_C_Header

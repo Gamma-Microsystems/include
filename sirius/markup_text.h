@@ -1,6 +1,6 @@
 #pragma once
 #include <_cheader.h>
-#include <toaru/graphics.h>
+#include <sirius/graphics.h>
 
 _Begin_C_Header
 

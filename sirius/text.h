@@ -1,6 +1,6 @@
 #pragma once
 /**
- * @file toaru/text.h
+ * @file sirius/text.h
  * @brief TrueType glyph rasterizer.
  *
  * Exposed API for the TrueType renderer.

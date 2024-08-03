@@ -1,8 +1,8 @@
 #pragma once
 
 #include <_cheader.h>
-#include <toaru/hashmap.h>
-#include <toaru/list.h>
+#include <sirius/hashmap.h>
+#include <sirius/list.h>
 
 _Begin_C_Header
 

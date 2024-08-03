@@ -10,7 +10,7 @@
 #	include <stdlib.h>
 #endif
 
-#include <toaru/list.h>
+#include <sirius/list.h>
 
 _Begin_C_Header
 

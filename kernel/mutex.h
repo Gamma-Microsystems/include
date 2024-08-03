@@ -2,7 +2,7 @@
  * Mutex that sleeps... and can be owned across sleeping...
  *
  * @copyright 2014-2021 K. Lange <klange@toaruos.org>
- * This file is part of ToaruOS and is released under the terms
+ * This file is part of SiriusOS and is released under the terms
  * of the NCSA / University of Illinois License - see LICENSE.md
  */
 #include <kernel/list.h>
