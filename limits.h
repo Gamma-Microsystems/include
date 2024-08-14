@@ -87,11 +87,6 @@
 
 #  endif /* ISO C99 */
 
-# endif	/* limits.h  */
-#endif	/* GCC 2.  */
-
-#endif	/* !_LIBC_LIMITS_H_ */
-
  /* Get the compiler's limits.h, which defines almost all the ISO constants.
 
     We put this #include_next outside the double inclusion check because
