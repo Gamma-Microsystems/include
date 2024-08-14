@@ -9,7 +9,9 @@
 
 #define ALIGN (sizeof(size_t))
 
+#define UCHAR_MAX 255
+#define CHAR_BIT 8
+
 #define ONES ((size_t)-1/UCHAR_MAX)
 #define HIGHS (ONES * (UCHAR_MAX/2+1))
 #define HASZERO(X) (((X)-ONES) & ~(X) & HIGHS)
-
