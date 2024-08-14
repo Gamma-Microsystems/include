@@ -7,6 +7,45 @@
 
 // GPL License below :P (https://github.com/bminor/glibc/blob/master/include/limits.h)
 
+/* We don't have #include_next.
+   Define ANSI <limits.h> for standard 32-bit words.  */
+
+/* These assume 8-bit `char's, 16-bit `short int's,
+   and 32-bit `int's and `long int's.  */
+
+/* Number of bits in a `char'.	*/
+#  define CHAR_BIT	8
+
+/* Minimum and maximum values a `signed char' can hold.  */
+#  define SCHAR_MIN	(-128)
+#  define SCHAR_MAX	127
+
+/* Maximum value an `unsigned char' can hold.  (Minimum is 0.)  */
+#  define UCHAR_MAX	255
+
+/* Minimum and maximum values a `char' can hold.  */
+#  ifdef __CHAR_UNSIGNED__
+#   define CHAR_MIN	0
+#   define CHAR_MAX	UCHAR_MAX
+#  else
+#   define CHAR_MIN	SCHAR_MIN
+#   define CHAR_MAX	SCHAR_MAX
+#  endif
+
+/* Minimum and maximum values a `signed short int' can hold.  */
+#  define SHRT_MIN	(-32768)
+#  define SHRT_MAX	32767
+
+/* Maximum value an `unsigned short int' can hold.  (Minimum is 0.)  */
+#  define USHRT_MAX	65535
+
+/* Minimum and maximum values a `signed int' can hold.  */
+#  define INT_MIN	(-INT_MAX - 1)
+#  define INT_MAX	2147483647
+
+/* Maximum value an `unsigned int' can hold.  (Minimum is 0.)  */
+#  define UINT_MAX	4294967295U
+
 /* Minimum and maximum values a `signed long int' can hold.  */
 #  if __WORDSIZE == 64
 #   define LONG_MAX	9223372036854775807L
@@ -31,6 +70,26 @@
 /* Maximum value an `unsigned long long int' can hold.  (Minimum is 0.)  */
 #   define ULLONG_MAX	18446744073709551615ULL
 
+#  endif /* ISO C99 */
+
+# endif	/* limits.h  */
+#endif	/* GCC 2.  */
+
+#endif	/* !_LIBC_LIMITS_H_ */
+
+ /* Get the compiler's limits.h, which defines almost all the ISO constants.
+
+    We put this #include_next outside the double inclusion check because
+    it should be possible to include this file more than once and still get
+    the definitions from gcc's header.  */
+#if defined __GNUC__ && !defined _GCC_LIMITS_H_
+/* `_GCC_LIMITS_H_' is what GCC's file defines.  */
+# include_next <limits.h>
+#endif
+
+/* The <limits.h> files in some gcc versions don't define LLONG_MIN,
+   LLONG_MAX, and ULLONG_MAX.  Instead only the values gcc defined for
+   ages are available.  */
 #if defined __USE_ISOC99 && defined __GNUC__
 # ifndef LLONG_MIN
 #  define LLONG_MIN	(-LLONG_MAX-1)
@@ -81,3 +140,28 @@
 #  define ULLONG_WIDTH 64
 # endif
 #endif /* Use IEC_60559_BFP_EXT.  */
+
+/* The macros for _Bool are not defined by GCC's <limits.h> before GCC
+   11, or if _GNU_SOURCE is defined rather than enabling C23 support
+   with -std.  */
+#if __GLIBC_USE (ISOC23)
+# ifndef BOOL_MAX
+#  define BOOL_MAX 1
+# endif
+# ifndef BOOL_WIDTH
+#  define BOOL_WIDTH 1
+# endif
+#endif
+
+#ifdef	__USE_POSIX
+/* POSIX adds things to <limits.h>.  */
+# include <bits/posix1_lim.h>
+#endif
+
+#ifdef	__USE_POSIX2
+# include <bits/posix2_lim.h>
+#endif
+
+#ifdef	__USE_XOPEN
+# include <bits/xopen_lim.h>
+#endif
