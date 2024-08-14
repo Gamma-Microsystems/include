@@ -2,4 +2,5 @@
 
 #define _LITTLE_ENDIAN
 
-/* dummy */
+#define UCHAR_MAX 255
+#define CHAR_BIT 8
