@@ -92,7 +92,7 @@
     We put this #include_next outside the double inclusion check because
     it should be possible to include this file more than once and still get
     the definitions from gcc's header.  */
-#if defined __GNUC__ && !defined _GCC_LIMITS_H_
+#if defined __GNUC__ || __sirius__ && !defined _GCC_LIMITS_H_
 /* `_GCC_LIMITS_H_' is what GCC's file defines.  */
 # include_next <limits.h>
 #endif
@@ -100,7 +100,7 @@
 /* The <limits.h> files in some gcc versions don't define LLONG_MIN,
    LLONG_MAX, and ULLONG_MAX.  Instead only the values gcc defined for
    ages are available.  */
-#if defined __USE_ISOC99 && defined __GNUC__
+#if defined __USE_ISOC99 && defined __GNUC__ || __sirius__
 # ifndef LLONG_MIN
 #  define LLONG_MIN	(-LLONG_MAX-1)
 # endif
@@ -115,7 +115,7 @@
 /* The integer width macros are not defined by GCC's <limits.h> before
    GCC 7, or if _GNU_SOURCE rather than
    __STDC_WANT_IEC_60559_BFP_EXT__ is used to enable this feature.  */
-#if __GLIBC_USE (IEC_60559_BFP_EXT_C23)
+#if __SLIBC_USE (IEC_60559_BFP_EXT_C23)
 # ifndef CHAR_WIDTH
 #  define CHAR_WIDTH 8
 # endif
@@ -154,7 +154,7 @@
 /* The macros for _Bool are not defined by GCC's <limits.h> before GCC
    11, or if _GNU_SOURCE is defined rather than enabling C23 support
    with -std.  */
-#if __GLIBC_USE (ISOC23)
+#if __SLIBC_USE (ISOC23)
 # ifndef BOOL_MAX
 #  define BOOL_MAX 1
 # endif
