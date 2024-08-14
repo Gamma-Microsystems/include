@@ -112,57 +112,6 @@
 # endif
 #endif
 
-/* The integer width macros are not defined by GCC's <limits.h> before
-   GCC 7, or if _GNU_SOURCE rather than
-   __STDC_WANT_IEC_60559_BFP_EXT__ is used to enable this feature.  */
-#if __SLIBC_USE (IEC_60559_BFP_EXT_C23)
-# ifndef CHAR_WIDTH
-#  define CHAR_WIDTH 8
-# endif
-# ifndef SCHAR_WIDTH
-#  define SCHAR_WIDTH 8
-# endif
-# ifndef UCHAR_WIDTH
-#  define UCHAR_WIDTH 8
-# endif
-# ifndef SHRT_WIDTH
-#  define SHRT_WIDTH 16
-# endif
-# ifndef USHRT_WIDTH
-#  define USHRT_WIDTH 16
-# endif
-# ifndef INT_WIDTH
-#  define INT_WIDTH 32
-# endif
-# ifndef UINT_WIDTH
-#  define UINT_WIDTH 32
-# endif
-# ifndef LONG_WIDTH
-#  define LONG_WIDTH __WORDSIZE
-# endif
-# ifndef ULONG_WIDTH
-#  define ULONG_WIDTH __WORDSIZE
-# endif
-# ifndef LLONG_WIDTH
-#  define LLONG_WIDTH 64
-# endif
-# ifndef ULLONG_WIDTH
-#  define ULLONG_WIDTH 64
-# endif
-#endif /* Use IEC_60559_BFP_EXT.  */
-
-/* The macros for _Bool are not defined by GCC's <limits.h> before GCC
-   11, or if _GNU_SOURCE is defined rather than enabling C23 support
-   with -std.  */
-#if __SLIBC_USE (ISOC23)
-# ifndef BOOL_MAX
-#  define BOOL_MAX 1
-# endif
-# ifndef BOOL_WIDTH
-#  define BOOL_WIDTH 1
-# endif
-#endif
-
 #ifdef	__USE_POSIX
 /* POSIX adds things to <limits.h>.  */
 # include <bits/posix1_lim.h>
