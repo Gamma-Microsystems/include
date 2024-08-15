@@ -1,7 +1,7 @@
 #pragma once
 
 #include <_cheader.h>
-#include <sirius/yutani.h>
+#include <sirius/yutani-ng.h>
 
 _Begin_C_Header
 

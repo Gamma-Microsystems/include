@@ -14,7 +14,7 @@
 
 #include <_cheader.h>
 #include <stdint.h>
-#include <sirius/yutani.h>
+#include <sirius/yutani-ng.h>
 #include <sirius/text.h>
 
 _Begin_C_Header
