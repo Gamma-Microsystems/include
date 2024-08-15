@@ -3,7 +3,7 @@
 #ifndef spin_lock
 static void spin_lock(int volatile * lock) {
 	while(__sync_lock_test_and_set(lock, 0x01)) {
-		syscall_field();
+		syscall_yield();
 	}
 }
 
